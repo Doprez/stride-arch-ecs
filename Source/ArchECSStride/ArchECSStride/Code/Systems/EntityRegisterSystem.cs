@@ -1,75 +1,28 @@
-﻿using Stride.Engine;
-using Arch.Core;
-using Stride.Games;
-using ArchECSStride.Code.Configurations;
+﻿using Arch.Core.Utils;
 using ArchECSStride.Code.Arch;
-using System.Collections.Generic;
-using Arch.Core.Utils;
 using StrideEntity = Stride.Engine.Entity;
 using ArchEntity = Arch.Core.Entity;
 using Arch.Core.Extensions;
-using System;
+using Stride.Engine;
+using System.Collections.Generic;
+using Stride.Core;
 
-namespace ArchECSStride.Code;
-public class CustomGame : Game
+namespace ArchECSStride.Code.Systems;
+[DataContract(nameof(EntityRegisterSystem))]
+public class EntityRegisterSystem : SystemBase
 {
-	private World _world;
-	//private JobScheduler.JobScheduler _jobScheduler;
-	private ArchSettings _archSettings;
-
-	protected override void BeginRun()
+	public override void Start()
 	{
-		base.BeginRun();
-		
-		_world = World.Create();
-		//_jobScheduler = new("SampleWorkerThreads");
-		_archSettings = Settings.Configurations.Get<ArchSettings>();
-
-		// Register the world as a service so that it can be accessed by Stride systems.
-		Services.AddService(_world);
-
-		// Since I want to register settings through Stride the constructors can't have parameters.
-		foreach(var archSystem in _archSettings.Systems)
-		{
-			archSystem.InitializeSystem(_world, Services, SceneSystem);
-		}
-
-		foreach (var archSystem in _archSettings.Systems)
-		{
-			archSystem.Start();
-		}
-
-		// Register entities at startup
-		foreach(var entity in SceneSystem.SceneInstance.RootScene.Entities)
-		{
-			RegisterEntity(entity);
-		}
+		SceneSystem.SceneInstance.EntityAdded += SceneInstance_EntityAdded;
 	}
 
-	protected override void Update(GameTime gameTime)
-	{
-		base.Update(gameTime);
-
-		for (int i = 0; i < _archSettings.Systems.Count; i++)
-		{
-			_archSettings.Systems[i].Update(in gameTime);
-		}
-	}
-
-	protected override void EndRun()
-	{
-		World.Destroy(_world);
-		//_jobScheduler.Dispose();
-		base.EndRun();
-	}
-
-	private void RegisterEntity(StrideEntity e)
+	private void SceneInstance_EntityAdded(object sender, StrideEntity e)
 	{
 		if (e.GetComponent<IArchComponent>() == null) return;
 
 		List<object> archComponents = new();
 		var components = e.GetComponents<IArchComponent>();
-		foreach (var component in components)
+		foreach(var component in components)
 		{
 			archComponents.Add(component.ComponentType);
 		}
@@ -79,8 +32,8 @@ public class CustomGame : Game
 	public ArchEntity CreateFromArray(object[] components)
 	{
 		ComponentType[] types = GetComponentTypesForArchetype(components);
-		ArchEntity entity = _world.Create(types);
-		//SetFromArray(entity, components);
+		ArchEntity entity = World.Create(types);
+		SetFromArray(entity, components);
 		return entity;
 	}
 
@@ -153,5 +106,4 @@ public class CustomGame : Game
 		}
 		return types;
 	}
-
 }

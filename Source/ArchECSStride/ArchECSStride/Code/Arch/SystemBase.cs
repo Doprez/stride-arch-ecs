@@ -1,5 +1,6 @@
 ﻿using Arch.Core;
 using Stride.Core;
+using Stride.Engine;
 using Stride.Games;
 
 namespace ArchECSStride.Code.Arch;
@@ -17,16 +18,19 @@ public abstract class SystemBase
 	/// </summary>
 	[DataMemberIgnore]
 	public ServiceRegistry Services { get; private set; }
+	[DataMemberIgnore]
+	public SceneSystem SceneSystem { get; private set; }
 
 	/// <summary>
 	/// Constructor parameters must be empty for Stride to be able to serialize them, this is a work around.
 	/// </summary>
 	/// <param name="world"></param>
 	/// <param name="services"></param>
-	public void InitializeSystem(World world, ServiceRegistry services)
+	public void InitializeSystem(World world, ServiceRegistry services, SceneSystem sceneSystem)
 	{
 		World = world;
 		Services = services;
+		SceneSystem = sceneSystem;
 	}
 
 	/// <summary>
@@ -38,6 +42,6 @@ public abstract class SystemBase
 	///     Should be called within the update loop to update this system and executes its logic.
 	/// </summary>
 	/// <param name="state">A external state being passed to this method to be used.</param>
-	public abstract void Update(in GameTime state);
+	public virtual void Update(in GameTime state) { }
 
 }

@@ -66,8 +66,8 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: f73b8d44-fccf-401c-af72-9be32dda6db0
-                    ad242f3fb3c25e55e9c28725d939ac5b: !ArchECSStride.BasicCameraController,ArchECSStride
-                        Id: 4732b6f1-4521-4fd3-8ead-fa44b016601e
+                    0be25e0628cb591db247dfae2513c7b7: !ArchECSStride.BasicCameraController,ArchECSStride
+                        Id: 3b9644bc-23ad-4c76-954e-8334d0e0800f
                         Gamepad: false
                         KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}
                         TouchMovementSpeed: {X: 0.7, Y: 0.7, Z: 0.3}
@@ -106,3 +106,14 @@ Hierarchy:
                         Id: 6d949c59-4b11-44b0-b30a-3a5a7aa6129c
                         Model: 520ca7ca-3463-4346-bce8-b3d84ace5f50:Sphere
                         Materials: {}
+                    51ebb07dad9f3c09d57204ec6cb61a2a: !ArchPosition
+                        Id: 9664fe6e-3704-48d4-b202-a3d547d6a79a
+                        Component:
+                            X: 0.0
+                            Y: 0.0
+                            Z: 0.0
+                    c411414c30ff7d6c383cd14567862f3c: !ArchTest
+                        Id: 775c420c-78cc-4156-8d38-ba5ced1bfd86
+                        Component:
+                            Number: 0
+                            Text: null
