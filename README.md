@@ -10,6 +10,7 @@ all that you need to do is inherit from the SystemBase class and add it to the l
 
 ### Add Arch components in Strides Editor!
 ![image](https://github.com/Doprez/stride-arch-ecs/assets/73259914/d8e0f722-253c-4796-8b74-1825684ebee0)
+
 each component attached will create an Entity in the Arch world, with the correct components to be able to be queried later in any system.
 Example:
 - System:
