@@ -8,13 +8,11 @@ using Arch.Core.Utils;
 using StrideEntity = Stride.Engine.Entity;
 using ArchEntity = Arch.Core.Entity;
 using Arch.Core.Extensions;
-using System;
 
 namespace ArchECSStride.Code;
 public class CustomGame : Game
 {
 	private World _world;
-	//private JobScheduler.JobScheduler _jobScheduler;
 	private ArchSettings _archSettings;
 
 	protected override void BeginRun()
@@ -22,7 +20,6 @@ public class CustomGame : Game
 		base.BeginRun();
 		
 		_world = World.Create();
-		//_jobScheduler = new("SampleWorkerThreads");
 		_archSettings = Settings.Configurations.Get<ArchSettings>();
 
 		// Register the world as a service so that it can be accessed by Stride systems.
@@ -59,19 +56,19 @@ public class CustomGame : Game
 	protected override void EndRun()
 	{
 		World.Destroy(_world);
-		//_jobScheduler.Dispose();
 		base.EndRun();
 	}
 
 	private void RegisterEntity(StrideEntity e)
 	{
-		if (e.GetComponent<IArchComponent>() == null) return;
+		if (e.GetComponent<ArchComponent>() == null) return;
 
 		List<object> archComponents = new();
-		var components = e.GetComponents<IArchComponent>();
+		var components = e.GetComponents<ArchComponent>();
 		foreach (var component in components)
 		{
-			archComponents.Add(component.ComponentType);
+			component.SetData();
+			archComponents.Add(component.ComponentValue);
 		}
 		CreateFromArray(archComponents.ToArray());
 	}

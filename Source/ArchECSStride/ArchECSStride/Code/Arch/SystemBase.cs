@@ -4,6 +4,9 @@ using Stride.Engine;
 using Stride.Games;
 
 namespace ArchECSStride.Code.Arch;
+/// <summary>
+/// This is the base class for all Systems in the Arch ECS. Can be added throught the GameSettings asset.
+/// </summary>
 [DataContract]
 public abstract class SystemBase
 {

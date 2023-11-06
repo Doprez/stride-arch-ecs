@@ -4,10 +4,10 @@ using Stride.Engine;
 namespace ArchECSStride.Code.Arch.Components;
 [DataContract(nameof(ArchTest))]
 [ComponentCategory("Arch Components")]
-public class ArchTest : ArchComponent, IArchComponent
+public class ArchTest : ArchComponent
 {
 	[DataMemberIgnore]
-	object IArchComponent.ComponentType { get; set; } = new TestComponent();
+	public override object ComponentValue { get; set; } = new TestComponent();
 }
 
 public struct TestComponent

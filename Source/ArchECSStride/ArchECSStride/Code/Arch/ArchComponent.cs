@@ -2,7 +2,20 @@
 using Stride.Engine;
 
 namespace ArchECSStride.Code.Arch;
+/// <summary>
+/// This is only to provide a way to mark a component as an ArchComponent and serialize it in the Editor.
+/// </summary>
 [DataContract]
 public abstract class ArchComponent : EntityComponent
 {
+	/// <summary>
+	/// Component to add to the Arch entity
+	/// </summary>
+	[DataMemberIgnore]
+	public abstract object ComponentValue { get; set; }
+
+	public virtual void SetData()
+	{
+
+	}
 }

@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using Stride.Core;
 
 namespace ArchECSStride.Code.Systems;
+/// <summary>
+/// A system that registers Stride entities with Arch ECS when they are created at runtime.
+/// </summary>
 [DataContract(nameof(EntityRegisterSystem))]
 public class EntityRegisterSystem : SystemBase
 {
@@ -18,13 +21,14 @@ public class EntityRegisterSystem : SystemBase
 
 	private void SceneInstance_EntityAdded(object sender, StrideEntity e)
 	{
-		if (e.GetComponent<IArchComponent>() == null) return;
+		if (e.GetComponent<ArchComponent>() == null) return;
 
 		List<object> archComponents = new();
-		var components = e.GetComponents<IArchComponent>();
+		var components = e.GetComponents<ArchComponent>();
 		foreach(var component in components)
 		{
-			archComponents.Add(component.ComponentType);
+			component.SetData();
+			archComponents.Add(component.ComponentValue);
 		}
 		CreateFromArray(archComponents.ToArray());
 	}

@@ -108,5 +108,6 @@ Hierarchy:
                         Materials: {}
                     51ebb07dad9f3c09d57204ec6cb61a2a: !ArchPosition
                         Id: 9664fe6e-3704-48d4-b202-a3d547d6a79a
+                        StartPosition: {X: 20.0, Y: 10.0, Z: 30.0}
                     c411414c30ff7d6c383cd14567862f3c: !ArchTest
                         Id: 775c420c-78cc-4156-8d38-ba5ced1bfd86
