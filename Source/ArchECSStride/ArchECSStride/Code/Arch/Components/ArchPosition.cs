@@ -6,7 +6,7 @@ using System;
 namespace ArchECSStride.Code.Arch.Components;
 [DataContract(nameof(ArchPosition))]
 [ComponentCategory("Arch Components")]
-public class ArchPosition : ArchComponent<Vector3>, IArchComponent
+public class ArchPosition : ArchComponent, IArchComponent
 {
 	[DataMemberIgnore]
 	object IArchComponent.ComponentType { get; set; } = new Vector3();

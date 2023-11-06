@@ -3,8 +3,6 @@ using Stride.Engine;
 
 namespace ArchECSStride.Code.Arch;
 [DataContract]
-public abstract class ArchComponent<T> : EntityComponent
+public abstract class ArchComponent : EntityComponent
 {
-	[DataMemberIgnore]
-	public T Component { get; set; }
 }

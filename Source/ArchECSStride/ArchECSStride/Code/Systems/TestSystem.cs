@@ -1,6 +1,5 @@
 ﻿using Arch.Core;
 using ArchECSStride.Code.Arch;
-using ArchECSStride.Code.Arch.Components;
 using Stride.Core;
 using Stride.Core.Mathematics;
 using Stride.Games;

@@ -1,7 +1,4 @@
-﻿using Stride.Core;
-using System;
-
-namespace ArchECSStride.Code.Arch;
+﻿namespace ArchECSStride.Code.Arch;
 public interface IArchComponent
 {
 	/// <summary>
