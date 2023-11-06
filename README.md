@@ -42,7 +42,7 @@ public class TestSystem : SystemBase
 ```
 [DataContract(nameof(ArchPosition))]
 [ComponentCategory("Arch Components")]
-public class ArchPosition : ArchComponent<Vector3>, IArchComponent
+public class ArchPosition : ArchComponent, IArchComponent
 {
 	[DataMemberIgnore]
 	object IArchComponent.ComponentType { get; set; } = new Vector3();
@@ -51,7 +51,7 @@ public class ArchPosition : ArchComponent<Vector3>, IArchComponent
 ```
 [DataContract(nameof(ArchTest))]
 [ComponentCategory("Arch Components")]
-public class ArchTest : ArchComponent<TestComponent>, IArchComponent
+public class ArchTest : ArchComponent, IArchComponent
 {
 	[DataMemberIgnore]
 	object IArchComponent.ComponentType { get; set; } = new TestComponent();
