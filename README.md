@@ -87,3 +87,9 @@ When inheriting from SystemBase and registered in settings each System has acces
 - Have an easy way to modify Stride entities with a quick access array reference.
 - Multithreading
 - create a basic game/demo example
+
+# Example
+Below is an example of 50,000 entities randomly changing positions at a capped 144FPS. 
+![image](https://github.com/Doprez/stride-arch-ecs/assets/73259914/3932095e-d6ef-4733-8b2d-2f626f8dcf7b)
+
+The only Stride performance improvement used are instanced meshes since meshes are my current big limitation.
