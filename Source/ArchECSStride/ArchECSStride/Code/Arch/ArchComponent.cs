@@ -14,6 +14,9 @@ public abstract class ArchComponent : EntityComponent
 	[DataMemberIgnore]
 	public abstract object ComponentValue { get; set; }
 
+	/// <summary>
+	/// Sets data After Strides Entity is created and before it is registered with Arch ECS.
+	/// </summary>
 	public virtual void SetData()
 	{
 
