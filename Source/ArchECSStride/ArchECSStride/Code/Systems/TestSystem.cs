@@ -9,6 +9,9 @@ using Stride.Profiling;
 using System.Linq;
 
 namespace ArchECSStride.Code.Systems;
+/// <summary>
+/// So far this test class turned into basic logging of entity count and FPS.
+/// </summary>
 [DataContract(nameof(TestSystem))]
 public class TestSystem : SystemBase
 {
@@ -29,6 +32,6 @@ public class TestSystem : SystemBase
 	{
 		var result = World.CountEntities(in _queryDescription);
 
-		_debugText.Print($"TestSystem entities: {result} \nFPS: {_game.UpdateTime.FramePerSecond} \nUpdate Time: {state.TimePerFrame}", new Int2(50, 50));
+		_debugText.Print($"TestSystem entities: {result} \nFPS: {_game.UpdateTime.FramePerSecond} \nUpdate Time: {state.TimePerFrame.TotalMilliseconds}", new Int2(50, 50));
 	}
 }

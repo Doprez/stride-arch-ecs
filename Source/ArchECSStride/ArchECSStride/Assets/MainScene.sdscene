@@ -11,6 +11,7 @@ Hierarchy:
         - ref!! 72238e5d-4efb-4559-8148-777d586fdd51
         - ref!! 5076c41b-6bdc-4500-bc46-59bca93f458f
         - ref!! 994790fe-3b0b-43ab-8339-55b620c728e7
+        - ref!! d8e6dca1-7206-4f10-9271-077928586c12
     Parts:
         -   Entity:
                 Id: 5076c41b-6bdc-4500-bc46-59bca93f458f
@@ -109,3 +110,25 @@ Hierarchy:
                     e9de1eec71f3fe43f1bc557b9bba5e30: !InstancingComponent
                         Id: 2d00fd80-9ca8-4ab1-a823-c0137dd2edbf
                         Type: !InstancingEntityTransform {}
+        -   Entity:
+                Id: d8e6dca1-7206-4f10-9271-077928586c12
+                Name: Cube
+                Components:
+                    e6e08d57d7e41e39d45a3395949668ca: !TransformComponent
+                        Id: 3fcf20c5-e27c-4fbf-bb0e-2ab6f78b10bd
+                        Position: {X: 0.0, Y: 0.5, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    51ebb07dad9f3c09d57204ec6cb61a2a: !ArchPosition
+                        Id: 7cbfcaf9-0cda-4507-a95f-997d5b779078
+                        UseStridePosition: true
+                        StartPosition: {X: 20.0, Y: 10.0, Z: 30.0}
+                    ff4963edcf75b0de448fef82de925dfe: !InstanceComponent
+                        Id: 10323da0-a8f4-4865-a89d-0d640e13bdbd
+                        Master*: ref!! 2d00fd80-9ca8-4ab1-a823-c0137dd2edbf
+                    c3b52eb78080efe152759a6e3e4494aa: ~(Deleted)
+            Base:
+                BasePartAsset: 959d605f-86f3-4b2a-9b23-2f73827ed793:CubePrefab
+                BasePartId: 8f866237-62cc-442a-a8f0-db61b40bbeb0
+                InstanceId: fb76c491-8c2f-488d-ba89-922c6b68ac5c

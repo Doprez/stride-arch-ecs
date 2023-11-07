@@ -5,6 +5,9 @@ using Stride.Core.Serialization.Contents;
 using Stride.Engine;
 
 namespace ArchECSStride.Code.Systems;
+/// <summary>
+/// A simple system to spawn prefabs on startup.
+/// </summary>
 [DataContract(nameof(SpawnPrefabSystem))]
 public class SpawnPrefabSystem : SystemBase
 {

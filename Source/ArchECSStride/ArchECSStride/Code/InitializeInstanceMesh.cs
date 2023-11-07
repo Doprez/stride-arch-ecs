@@ -2,6 +2,9 @@
 using System.Linq;
 
 namespace ArchECSStride.Code;
+/// <summary>
+/// Searches for a instanced component and assigns the value to this Entity.
+/// </summary>
 public class InitializeInstanceMesh : StartupScript
 {
 	public InstanceComponent InstanceComponent { get; set; }
