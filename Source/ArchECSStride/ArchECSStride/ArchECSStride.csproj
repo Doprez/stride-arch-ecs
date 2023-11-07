@@ -17,4 +17,8 @@
 
     <PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.1.0.1948" IncludeAssets="build;buildTransitive" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Code\NPC\Systems\" />
+  </ItemGroup>
 </Project>

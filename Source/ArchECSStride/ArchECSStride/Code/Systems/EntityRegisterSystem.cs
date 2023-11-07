@@ -6,6 +6,8 @@ using Arch.Core.Extensions;
 using Stride.Engine;
 using System.Collections.Generic;
 using Stride.Core;
+using ArchECSStride.Code.Arch.Components;
+using ArchECSStride.Code.Services;
 
 namespace ArchECSStride.Code.Systems;
 /// <summary>
@@ -14,14 +16,25 @@ namespace ArchECSStride.Code.Systems;
 [DataContract(nameof(EntityRegisterSystem))]
 public class EntityRegisterSystem : SystemBase
 {
+	private StrideEntityManager _strideEntityManager;
+
 	public override void Start()
 	{
+		_strideEntityManager = Services.GetService<StrideEntityManager>();
 		SceneSystem.SceneInstance.EntityAdded += SceneInstance_EntityAdded;
 	}
 
 	private void SceneInstance_EntityAdded(object sender, StrideEntity e)
 	{
 		if (e.GetComponent<ArchComponent>() == null) return;
+
+		//register to Entity Manager
+		ArchStrideId id = new ArchStrideId();
+		StrideId strideId = new StrideId();
+		strideId.Id = _strideEntityManager.AddEntity(e);
+		id.ComponentValue = strideId;
+		e.Add(id);
+
 
 		List<object> archComponents = new();
 		var components = e.GetComponents<ArchComponent>();
@@ -43,57 +56,7 @@ public class EntityRegisterSystem : SystemBase
 
 	public void SetFromArray(ArchEntity entity, object[] components)
 	{
-		switch (components.Length)
-		{
-			case 1:
-				entity.Set(components[0]);
-				break;
-			case 2:
-				entity.Set(components[0], components[1]);
-				break;
-			case 3:
-				entity.Set(components[0], components[1], components[2]);
-				break;
-			case 4:
-				entity.Set(components[0], components[1], components[2], components[3]);
-				break;
-			case 5:
-				entity.Set(components[0], components[1], components[2], components[3], components[4]);
-				break;
-			case 6:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5]);
-				break;
-			case 7:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6]);
-				break;
-			case 8:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7]);
-				break;
-			case 9:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8]);
-				break;
-			case 10:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8], components[9]);
-				break;
-			case 11:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8], components[9], components[10]);
-				break;
-			case 12:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8], components[9], components[10], components[11]);
-				break;
-			case 13:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8], components[9], components[10], components[11], components[12]);
-				break;
-			case 14:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8], components[9], components[10], components[11], components[12], components[13]);
-				break;
-			case 15:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8], components[9], components[10], components[11], components[12], components[13], components[14]);
-				break;
-			case 16:
-				entity.Set(components[0], components[1], components[2], components[3], components[4], components[5], components[6], components[7], components[8], components[9], components[10], components[11], components[12], components[13], components[14], components[15]);
-				break;
-		}
+		entity.SetRange(components);
 	}
 
 	private ComponentType[] GetComponentTypesForArchetype(object[] components)

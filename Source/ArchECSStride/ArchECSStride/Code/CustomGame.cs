@@ -8,12 +8,15 @@ using Arch.Core.Utils;
 using StrideEntity = Stride.Engine.Entity;
 using ArchEntity = Arch.Core.Entity;
 using Arch.Core.Extensions;
+using ArchECSStride.Code.Services;
+using ArchECSStride.Code.Arch.Components;
 
 namespace ArchECSStride.Code;
 public class CustomGame : Game
 {
 	private World _world;
 	private ArchSettings _archSettings;
+	private StrideEntityManager _strideEntityManager = new();
 
 	protected override void BeginRun()
 	{
@@ -24,6 +27,8 @@ public class CustomGame : Game
 
 		// Register the world as a service so that it can be accessed by Stride systems.
 		Services.AddService(_world);
+		// This service will be used to quickly access Entities from Stride with the stored index in Arch Entities
+		Services.AddService(_strideEntityManager);
 
 		// Since I want to register settings through Stride the constructors can't have parameters.
 		foreach(var archSystem in _archSettings.Systems)
@@ -36,11 +41,12 @@ public class CustomGame : Game
 			archSystem.Start();
 		}
 
+		// EntityRegisterSystem is run before this, causing some issues.
 		// Register entities at startup
-		foreach(var entity in SceneSystem.SceneInstance.RootScene.Entities)
-		{
-			RegisterEntity(entity);
-		}
+		//foreach(var entity in SceneSystem.SceneInstance.RootScene.Entities)
+		//{
+		//	RegisterEntity(entity);
+		//}
 	}
 
 	protected override void Update(GameTime gameTime)
@@ -63,8 +69,16 @@ public class CustomGame : Game
 	{
 		if (e.GetComponent<ArchComponent>() == null) return;
 
+		//register to Entity Manager
+		ArchStrideId id = new ArchStrideId();
+		StrideId strideId = new StrideId();
+		strideId.Id = _strideEntityManager.AddEntity(e);
+		id.ComponentValue = strideId;
+		e.Add(id);
+
 		List<object> archComponents = new();
 		var components = e.GetComponents<ArchComponent>();
+
 		foreach (var component in components)
 		{
 			component.SetData();

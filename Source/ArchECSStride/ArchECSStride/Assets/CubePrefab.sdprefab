@@ -1,0 +1,29 @@
+!PrefabAsset
+Id: 959d605f-86f3-4b2a-9b23-2f73827ed793
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! 8f866237-62cc-442a-a8f0-db61b40bbeb0
+    Parts:
+        -   Entity:
+                Id: 8f866237-62cc-442a-a8f0-db61b40bbeb0
+                Name: Cube
+                Components:
+                    e6e08d57d7e41e39d45a3395949668ca: !TransformComponent
+                        Id: 35ec7929-3048-4db4-9a7a-8cfd752865e9
+                        Position: {X: 0.0, Y: 0.5, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    51ebb07dad9f3c09d57204ec6cb61a2a: !ArchPosition
+                        Id: 973d11cc-9e7c-4966-a439-d43517546b44
+                        UseStridePosition: true
+                        StartPosition: {X: 20.0, Y: 10.0, Z: 30.0}
+                    ff4963edcf75b0de448fef82de925dfe: !InstanceComponent
+                        Id: d7d9e20e-9c09-475b-bafd-689b58c368f4
+                        Master: null
+                    c3b52eb78080efe152759a6e3e4494aa: !ArchECSStride.Code.InitializeInstanceMesh,ArchECSStride
+                        Id: c40d5e2d-e618-43b9-ab8f-4720b4653f2c
+                        InstanceComponent: ref!! d7d9e20e-9c09-475b-bafd-689b58c368f4
+                        InstancedModelName: InstancedMesh

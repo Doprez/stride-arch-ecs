@@ -10,7 +10,7 @@ Hierarchy:
         - ref!! 6d2135c4-1c58-4870-b0a6-6194b508a1dd
         - ref!! 72238e5d-4efb-4559-8148-777d586fdd51
         - ref!! 5076c41b-6bdc-4500-bc46-59bca93f458f
-        - ref!! a1e1e91e-8b64-4128-9b67-6bd39de1dc6a
+        - ref!! 994790fe-3b0b-43ab-8339-55b620c728e7
     Parts:
         -   Entity:
                 Id: 5076c41b-6bdc-4500-bc46-59bca93f458f
@@ -93,28 +93,19 @@ Hierarchy:
                         Type: !LightSkybox
                             Skybox: 916ddf54-9e2e-4091-a3ba-c84b4ca0a160:Skybox
         -   Entity:
-                Id: a1e1e91e-8b64-4128-9b67-6bd39de1dc6a
-                Name: Sphere
+                Id: 994790fe-3b0b-43ab-8339-55b620c728e7
+                Name: InstancedMesh
                 Components:
-                    e6e08d57d7e41e39d45a3395949668ca: !TransformComponent
-                        Id: 9bf3c3af-eb1a-4184-87c4-2df1fd95042d
-                        Position: {X: 0.0, Y: 0.5, Z: 0.0}
+                    541849f42e3825b1952d83aa2cb97e48: !TransformComponent
+                        Id: 16a1b00f-f850-40fb-883d-768e76ec31ca
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    a6a4424c8ad47d638aeeea5676d91c86: !ModelComponent
-                        Id: 6d949c59-4b11-44b0-b30a-3a5a7aa6129c
-                        Model: 520ca7ca-3463-4346-bce8-b3d84ace5f50:Sphere
+                    20f0b328f8396bcb6415dfd858f6c9c1: !ModelComponent
+                        Id: a3be3089-1378-4377-b51a-57160ca25109
+                        Model: fa39d881-d536-4e8a-866f-0f9991c5b065:Cube
                         Materials: {}
-                    51ebb07dad9f3c09d57204ec6cb61a2a: !ArchPosition
-                        Id: 9664fe6e-3704-48d4-b202-a3d547d6a79a
-                        UseStridePosition: true
-                        StartPosition: {X: 20.0, Y: 10.0, Z: 30.0}
-                    8c2fec32d9e72ae4a273e51d75f94e98: !ArchRotation
-                        Id: 67d558ca-4830-4ec1-8da3-90ddc25cea1f
-                        StartRotation: {X: 0.0, Y: 0.17364818, Z: 0.0, W: 0.9848077}
-                    fe05ccb4f520441b331e8659e929e35f: !ArchTest
-                        Id: f4c452db-0a44-4301-99bd-08bb25bd2973
-                        StartComponent:
-                            Number: 25
-                            Text: Hello World!
+                    e9de1eec71f3fe43f1bc557b9bba5e30: !InstancingComponent
+                        Id: 2d00fd80-9ca8-4ab1-a823-c0137dd2edbf
+                        Type: !InstancingEntityTransform {}
