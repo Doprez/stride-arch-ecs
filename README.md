@@ -84,7 +84,7 @@ When inheriting from SystemBase and registered in settings each System has acces
 
 # Future goals
 - ~Allow EntityComponents to create Arch Entities with Arch Components (Partially done. I would like to have editable values in editor as well)~ Done!
-- Have an easy way to modify Stride entities with a quick access array reference.(Mostly done. I ned a way to verify removing entities wont cause issues.)
+- Have an easy way to modify Stride entities with a quick access array reference.(Mostly done. I need a way to verify removing entities wont cause issues.)
 - Multithreading
 - create a basic game/demo example
 
