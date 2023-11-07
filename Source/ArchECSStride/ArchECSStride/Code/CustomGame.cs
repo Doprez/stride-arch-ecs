@@ -30,8 +30,15 @@ public class CustomGame : Game
 		// This service will be used to quickly access Entities from Stride with the stored index in Arch Entities
 		Services.AddService(_strideEntityManager);
 
+		// EntityRegisterSystem is run before this, causing some issues.
+		// Register entities at startup
+		foreach (var entity in SceneSystem.SceneInstance.RootScene.Entities)
+		{
+			RegisterEntity(entity);
+		}
+
 		// Since I want to register settings through Stride the constructors can't have parameters.
-		foreach(var archSystem in _archSettings.Systems)
+		foreach (var archSystem in _archSettings.Systems)
 		{
 			archSystem.InitializeSystem(_world, Services, SceneSystem);
 		}
@@ -40,13 +47,6 @@ public class CustomGame : Game
 		{
 			archSystem.Start();
 		}
-
-		// EntityRegisterSystem is run before this, causing some issues.
-		// Register entities at startup
-		//foreach(var entity in SceneSystem.SceneInstance.RootScene.Entities)
-		//{
-		//	RegisterEntity(entity);
-		//}
 	}
 
 	protected override void Update(GameTime gameTime)
