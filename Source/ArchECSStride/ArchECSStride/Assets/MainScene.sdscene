@@ -186,6 +186,14 @@ Hierarchy:
                         KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
                         MouseRotationSpeed: {X: 1.0, Y: 1.0}
                         TouchRotationSpeed: {X: 1.0, Y: 0.7}
+                    2cf50df9a5fc88c8ee99f86b38b1e54d: !ArchECSStride.GameProfiler,ArchECSStride
+                        Id: d62065de-3575-42b8-816e-118743bf717a
+                        Enabled: true
+                        TextColor: {R: 144, G: 238, B: 144, A: 255}
+                        RefreshTime: 500.0
+                        SortingMode: ByTime
+                        FilteringMode: Fps
+                        ResultPage: 1
         -   Entity:
                 Id: 72238e5d-4efb-4559-8148-777d586fdd51
                 Name: Skybox
