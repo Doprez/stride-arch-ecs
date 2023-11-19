@@ -3,10 +3,8 @@ using ArchECSStride.Code.Arch;
 using ArchECSStride.Code.Arch.Components;
 using Stride.Core;
 using Stride.Core.Mathematics;
-using Stride.Engine;
 using Stride.Games;
 using Stride.Profiling;
-using System.Linq;
 
 namespace ArchECSStride.Code.Systems;
 /// <summary>

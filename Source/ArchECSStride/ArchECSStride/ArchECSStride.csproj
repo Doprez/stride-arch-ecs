@@ -1,23 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Arch" Version="1.2.7" />
     <PackageReference Include="Arch.System" Version="1.0.2" />
-    <PackageReference Include="Stride.Engine" Version="4.1.0.1948" />
-
-    <PackageReference Include="Stride.Video" Version="4.1.0.1948" />
-    <PackageReference Include="Stride.Physics" Version="4.1.0.1948" />
-    <PackageReference Include="Stride.Navigation" Version="4.1.0.1948" />
-    <PackageReference Include="Stride.Particles" Version="4.1.0.1948" />
-    <PackageReference Include="Stride.UI" Version="4.1.0.1948" />
-
-    <PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.1.0.1948" IncludeAssets="build;buildTransitive" />
+    <PackageReference Include="Stride.Engine" Version="4.2.0.2043" />
+    <PackageReference Include="Stride.Video" Version="4.2.0.2043" />
+    <PackageReference Include="Stride.Physics" Version="4.2.0.2043" />
+    <PackageReference Include="Stride.Navigation" Version="4.2.0.2043" />
+    <PackageReference Include="Stride.Particles" Version="4.2.0.2043" />
+    <PackageReference Include="Stride.UI" Version="4.2.0.2043" />
+    <PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.2.0.2043" IncludeAssets="build;buildTransitive" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Code\NPC\Systems\" />
   </ItemGroup>

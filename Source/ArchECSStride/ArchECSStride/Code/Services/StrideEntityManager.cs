@@ -22,4 +22,9 @@ public class StrideEntityManager
 		// Need to make sure this does not shift items in the array
 		Entities.RemoveAt(index);
 	}
+
+	public int IndexOf(Entity entity)
+	{
+		return Entities.IndexOf(entity);
+	}
 }

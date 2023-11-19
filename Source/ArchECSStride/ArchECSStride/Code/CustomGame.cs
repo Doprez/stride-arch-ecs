@@ -70,9 +70,11 @@ public class CustomGame : Game
 		if (e.GetComponent<ArchComponent>() == null) return;
 
 		//register to Entity Manager
-		ArchStrideId id = new ArchStrideId();
-		StrideId strideId = new StrideId();
-		strideId.Id = _strideEntityManager.AddEntity(e);
+		ArchStrideId id = new();
+		StrideId strideId = new()
+		{
+			Id = _strideEntityManager.AddEntity(e)
+		};
 		id.ComponentValue = strideId;
 		e.Add(id);
 

@@ -11,8 +11,73 @@ Hierarchy:
         - ref!! 72238e5d-4efb-4559-8148-777d586fdd51
         - ref!! 5076c41b-6bdc-4500-bc46-59bca93f458f
         - ref!! 994790fe-3b0b-43ab-8339-55b620c728e7
-        - ref!! d8e6dca1-7206-4f10-9271-077928586c12
+        - ref!! e248bedd-1576-4543-b0d2-ce46cb7220c5
+        - ref!! 549f8c1b-8534-4701-bf98-6aae06237866
+        - ref!! 0ede60e3-63c0-4772-a94d-8ca018f77c4f
+        - ref!! ca8f80ba-812d-4a07-b527-90ed384f961d
+        - ref!! b5b0f298-5859-4565-9160-931e1a40bf62
+        - ref!! 3603c345-3543-428e-94b3-c9979b18b5d5
+        - ref!! 56432019-634c-4640-8b60-e8c358303ffb
+        - ref!! 3d7a8876-1cc9-480e-946a-ac97788e282d
+        - ref!! 13033b01-40ec-4c52-af25-cc383e1da08d
+        - ref!! c3ad6845-21c1-4e06-ab5d-0b246cc10754
     Parts:
+        -   Folder: NavBoxes
+            Entity:
+                Id: 0ede60e3-63c0-4772-a94d-8ca018f77c4f
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: c7a3e9a4-cd11-4b27-89c5-3178a34a1941
+                        Position: {X: -200.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: 387a0115-58b6-4527-8046-fa3a1b503f5e
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Folder: NavBoxes
+            Entity:
+                Id: 13033b01-40ec-4c52-af25-cc383e1da08d
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: 1e36f8ce-18b5-478c-a136-76d4905302ed
+                        Position: {X: 0.0, Y: 0.0, Z: -200.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: 519ebbd7-9a76-4b00-bb64-5fd20631ff20
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Folder: NavBoxes
+            Entity:
+                Id: 3603c345-3543-428e-94b3-c9979b18b5d5
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: 9935264f-e82a-4ffe-ac6b-9366fb6ae31e
+                        Position: {X: 0.0, Y: 0.0, Z: 200.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: de5d1a7b-06b9-44cd-a12c-c1fe0639d237
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Folder: NavBoxes
+            Entity:
+                Id: 3d7a8876-1cc9-480e-946a-ac97788e282d
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: 688745b9-25d0-4234-be91-59a661af4b1d
+                        Position: {X: -200.0, Y: 0.0, Z: -200.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: b85d03c1-c1c1-49d9-aa45-83e68724c716
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
         -   Entity:
                 Id: 5076c41b-6bdc-4500-bc46-59bca93f458f
                 Name: Ground
@@ -21,12 +86,57 @@ Hierarchy:
                         Id: df15f39b-41b8-47b8-aeaa-54c926eb4e59
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Scale: {X: 1000.0, Y: 1.0, Z: 1000.0}
                         Children: {}
                     cf52defb7087fa879cc2b484c8017287: !ModelComponent
                         Id: 601b8225-6d8d-4766-b155-f9aa9cb32f9b
                         Model: 56894502-5bbc-4870-8f4a-9bfad3c09d7b:Ground
                         Materials: {}
+                    63e503e5b1bb62d3911b6a993caf990c: !StaticColliderComponent
+                        Id: 5f560676-10e4-4d4a-b08d-b8e36036b97d
+                        CollisionGroup: StaticFilter
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        AlwaysUpdateNaviMeshCache: false
+                        ColliderShapes:
+                            4adbd5466db759986589a7e369d78847: !BoxColliderShapeDesc
+                                Is2D: false
+                                Size: {X: 10.0, Y: 0.1, Z: 10.0}
+                                LocalOffset: {X: 0.0, Y: -0.05, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+        -   Folder: NavBoxes
+            Entity:
+                Id: 549f8c1b-8534-4701-bf98-6aae06237866
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: 1ffd0af3-fbbb-41d1-8098-7ca3db597bf7
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: ffce9ae5-4316-4d99-8441-893e69ba8390
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Folder: NavBoxes
+            Entity:
+                Id: 56432019-634c-4640-8b60-e8c358303ffb
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: bafbc73f-d8db-441c-8b6e-4a7f6953d69d
+                        Position: {X: -200.0, Y: 0.0, Z: 200.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: 0697ca33-4aab-4047-b685-3e64bbd7dab1
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
         -   Entity:
                 Id: 6d2135c4-1c58-4870-b0a6-6194b508a1dd
                 Name: Directional light
@@ -42,7 +152,7 @@ Hierarchy:
                         Type: !LightDirectional
                             Color: !ColorRgbProvider
                                 Value: {R: 1.0, G: 1.0, B: 1.0}
-                            Shadow:
+                            Shadow: !LightDirectionalShadowMap
                                 Enabled: true
                                 Filter: !LightShadowMapFilterTypePcf
                                     FilterSize: Filter5x5
@@ -99,7 +209,7 @@ Hierarchy:
                 Components:
                     541849f42e3825b1952d83aa2cb97e48: !TransformComponent
                         Id: 16a1b00f-f850-40fb-883d-768e76ec31ca
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Position: {X: 12.170552, Y: 0.0, Z: 11.60779}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -110,25 +220,59 @@ Hierarchy:
                     e9de1eec71f3fe43f1bc557b9bba5e30: !InstancingComponent
                         Id: 2d00fd80-9ca8-4ab1-a823-c0137dd2edbf
                         Type: !InstancingEntityTransform {}
-        -   Entity:
-                Id: d8e6dca1-7206-4f10-9271-077928586c12
-                Name: Cube
+        -   Folder: NavBoxes
+            Entity:
+                Id: b5b0f298-5859-4565-9160-931e1a40bf62
+                Name: NavBox
                 Components:
-                    e6e08d57d7e41e39d45a3395949668ca: !TransformComponent
-                        Id: 3fcf20c5-e27c-4fbf-bb0e-2ab6f78b10bd
-                        Position: {X: 0.0, Y: 0.5, Z: 0.0}
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: 04091088-6ca0-4fbb-9b3f-d070c2cdbeca
+                        Position: {X: 200.0, Y: 0.0, Z: 200.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    51ebb07dad9f3c09d57204ec6cb61a2a: !ArchPosition
-                        Id: 7cbfcaf9-0cda-4507-a95f-997d5b779078
-                        UseStridePosition: true
-                        StartPosition: {X: 20.0, Y: 10.0, Z: 30.0}
-                    ff4963edcf75b0de448fef82de925dfe: !InstanceComponent
-                        Id: 10323da0-a8f4-4865-a89d-0d640e13bdbd
-                        Master*: ref!! 2d00fd80-9ca8-4ab1-a823-c0137dd2edbf
-                    c3b52eb78080efe152759a6e3e4494aa: ~(Deleted)
-            Base:
-                BasePartAsset: 959d605f-86f3-4b2a-9b23-2f73827ed793:CubePrefab
-                BasePartId: 8f866237-62cc-442a-a8f0-db61b40bbeb0
-                InstanceId: fb76c491-8c2f-488d-ba89-922c6b68ac5c
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: a073cb10-0fea-448b-9b62-d1bb1875ea6f
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Folder: NavBoxes
+            Entity:
+                Id: c3ad6845-21c1-4e06-ab5d-0b246cc10754
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: 4e68aebe-9a6e-40e3-91a2-eae82f386c1a
+                        Position: {X: 200.0, Y: 0.0, Z: -200.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: a2292884-a264-4c6f-a94e-828273d34dc0
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Folder: NavBoxes
+            Entity:
+                Id: ca8f80ba-812d-4a07-b527-90ed384f961d
+                Name: NavBox
+                Components:
+                    396dcd272170b5237528fff3cf0bb174: !TransformComponent
+                        Id: c5ffc176-9b84-47df-98d6-5f8cbde422aa
+                        Position: {X: 200.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
+                        Id: 03ca75a0-b38f-40b2-9f8e-8a8298b1bb80
+                        Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Entity:
+                Id: e248bedd-1576-4543-b0d2-ce46cb7220c5
+                Name: ProcessorComponents
+                Components:
+                    e54bbaf934cf466cb7e0e86b032971ef: !TransformComponent
+                        Id: 5744ee96-a01a-4911-873e-531d03fcaa85
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    1b4f149407e733e51b59f2467437fdf7: !NavigationComponent
+                        Id: ab09349f-53c6-4ade-b4bd-1dea8ebca8a6
+                        NavigationMesh: null
+                        GroupId: c2a2522c-db2c-4d56-b3b7-3aecaacd69af

@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using Stride.Core;
 using ArchECSStride.Code.Arch.Components;
 using ArchECSStride.Code.Services;
+using System;
+using Arch.Core;
 
 namespace ArchECSStride.Code.Systems;
 /// <summary>
@@ -17,11 +19,37 @@ namespace ArchECSStride.Code.Systems;
 public class EntityRegisterSystem : SystemBase
 {
 	private StrideEntityManager _strideEntityManager;
+	private QueryDescription _query;
 
 	public override void Start()
 	{
 		_strideEntityManager = Services.GetService<StrideEntityManager>();
+
+		_query = new QueryDescription().WithAny<StrideId>();
+
 		SceneSystem.SceneInstance.EntityAdded += SceneInstance_EntityAdded;
+		//Removing entities is finicky will need to revisit
+		//SceneSystem.SceneInstance.EntityRemoved += SceneInstance_EntityRemoved;
+	}
+
+	// TODO This doesnt work and would be very slow even if it did.
+	private void SceneInstance_EntityRemoved(object sender, StrideEntity e)
+	{
+		if (e.GetComponent<ArchComponent>() == null) return;
+
+		Span<ArchEntity> entities = new();
+		
+		//unregister from Entity Manager
+		World.GetEntities(in _query, entities);
+		var id = _strideEntityManager.IndexOf(e);
+		_strideEntityManager.RemoveEntity(id);
+		ArchEntity entityToDestroy = new();
+		World.Query(in _query, (ref ArchEntity entity, ref StrideId strideId) =>
+		{
+			if(strideId.Id == id) entityToDestroy = entity;
+		});
+
+		//World.Destroy(entityToDestroy);
 	}
 
 	private void SceneInstance_EntityAdded(object sender, StrideEntity e)
@@ -29,9 +57,11 @@ public class EntityRegisterSystem : SystemBase
 		if (e.GetComponent<ArchComponent>() == null) return;
 
 		//register to Entity Manager
-		ArchStrideId id = new ArchStrideId();
-		StrideId strideId = new StrideId();
-		strideId.Id = _strideEntityManager.AddEntity(e);
+		ArchStrideId id = new();
+		StrideId strideId = new()
+		{
+			Id = _strideEntityManager.AddEntity(e)
+		};
 		id.ComponentValue = strideId;
 		e.Add(id);
 

@@ -10,20 +10,30 @@ namespace ArchECSStride.Code.Arch.Components;
 public class ArchPosition : ArchComponent
 {
 	public bool UseStridePosition { get; set; } = true;
-	public Vector3 StartPosition { get; set; }
+	public Position StartPosition { get; set; }
 
 	[DataMemberIgnore]
-	public override object ComponentValue { get; set; } = new Vector3();
+	public override object ComponentValue { get; set; } = new Position();
 
 	public override void SetData()
 	{
 		if (UseStridePosition)
 		{
-			ComponentValue = Entity.Transform.Position;
+			var position = new Position()
+			{
+				CurrentPosition = Entity.Get<TransformComponent>().Position
+			};
+			ComponentValue = position;
 		}
 		else
 		{
 			ComponentValue = StartPosition;
 		}
 	}
+}
+
+[DataContract]
+public struct Position
+{
+	public Vector3 CurrentPosition;
 }

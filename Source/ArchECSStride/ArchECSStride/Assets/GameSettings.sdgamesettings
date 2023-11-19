@@ -21,14 +21,37 @@ Defaults:
         ResourceLiveTimeout: 0:00:00:08.0000000
     - !Stride.Assets.Textures.TextureSettings,Stride.Assets
         TextureQuality: Fast
+    - !Stride.Navigation.NavigationSettings,Stride.Navigation
+        EnableDynamicNavigationMesh: true
+        IncludedCollisionGroups: StaticFilter
+        BuildSettings:
+            CellHeight: 0.2
+            CellSize: 0.3
+            TileSize: 32
+            MinRegionArea: 2
+            RegionMergeArea: 20
+            MaxEdgeLen: 12.0
+            MaxEdgeError: 1.3
+            DetailSamplingDistance: 6.0
+            MaxDetailSamplingError: 1.0
+        Groups:
+            -   Id: c2a2522c-db2c-4d56-b3b7-3aecaacd69af
+                Name: Human
+                AgentSettings:
+                    Height: 1.0
+                    MaxClimb: 0.25
+                    MaxSlope: {Radians: 0.7853982}
+                    Radius: 0.5
     - !ArchECSStride.Code.Configurations.ArchSettings,ArchECSStride
         Systems:
-            - !TestSystem {}
             - !EntityRegisterSystem {}
-            - !MoveEntitySystem {}
             - !SpawnPrefabSystem
                 PrefabToSpawn: 959d605f-86f3-4b2a-9b23-2f73827ed793:CubePrefab
-                AmountOfPrefabs: 50000
+                AmountOfPrefabs: 100
+            - !UpdateStridePositionsSystem {}
+            - !PathfindingSystem {}
+            - !MoveEntitySystem {}
+            - !TestSystem {}
 Overrides: []
 PlatformFilters:
     - PowerVR SGX 54[0-9]

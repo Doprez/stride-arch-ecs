@@ -16,14 +16,23 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    51ebb07dad9f3c09d57204ec6cb61a2a: !ArchPosition
-                        Id: 973d11cc-9e7c-4966-a439-d43517546b44
-                        UseStridePosition: true
-                        StartPosition: {X: 20.0, Y: 10.0, Z: 30.0}
                     ff4963edcf75b0de448fef82de925dfe: !InstanceComponent
                         Id: d7d9e20e-9c09-475b-bafd-689b58c368f4
                         Master: null
-                    c3b52eb78080efe152759a6e3e4494aa: !ArchECSStride.Code.InitializeInstanceMesh,ArchECSStride
-                        Id: c40d5e2d-e618-43b9-ab8f-4720b4653f2c
+                    8f2e7287f51f04d84e3714baf62f3efa: !ArchPathfinder
+                        Id: bc85cedf-5099-4b2c-a0db-c6462868a199
+                        ComponentValue: !ArchECSStride.Code.Arch.Components.Pathfinder,ArchECSStride
+                            Target: {X: 0.0, Y: 0.0, Z: 0.0}
+                            SetNewPath: false
+                            Path: null
+                            ShouldMove: false
+                            Speed: 0.0
+                    9effa4d5b7b729bb329ee0f0a4aabf72: !ArchPosition
+                        Id: 0edda916-c4ed-410b-895c-a692e2d203d1
+                        UseStridePosition: true
+                        StartPosition:
+                            CurrentPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+                    0f65c959594a1ae5d162cd32635a0b71: !ArchECSStride.Code.InitializeInstanceMesh,ArchECSStride
+                        Id: 136e5713-2df7-4677-98e8-ca25d4e60751
                         InstanceComponent: ref!! d7d9e20e-9c09-475b-bafd-689b58c368f4
                         InstancedModelName: InstancedMesh
