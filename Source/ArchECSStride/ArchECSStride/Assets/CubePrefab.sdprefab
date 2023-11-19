@@ -30,3 +30,5 @@ Hierarchy:
                         Id: 136e5713-2df7-4677-98e8-ca25d4e60751
                         InstanceComponent: ref!! d7d9e20e-9c09-475b-bafd-689b58c368f4
                         InstancedModelName: InstancedMesh
+                    c61d65090ae2cbb9315bda3cb7c64520: !ArchRotation
+                        Id: a9c80ea5-ac9b-4d0f-8ba8-fd4acb98c039

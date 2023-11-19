@@ -7,13 +7,16 @@ namespace ArchECSStride.Code.Arch.Components;
 [ComponentCategory("Arch Components")]
 public class ArchRotation : ArchComponent
 {
-	public Quaternion StartRotation { get; set; }
-
 	[DataMemberIgnore]
-	public override object ComponentValue { get; set; } = new Quaternion();
+	public override object ComponentValue { get; set; } = new Rotation();
 
 	public override void SetData()
 	{
-		ComponentValue = StartRotation;
+		ComponentValue = new Rotation();
 	}
+}
+
+public struct Rotation
+{
+	public Quaternion CurrentRotation;
 }

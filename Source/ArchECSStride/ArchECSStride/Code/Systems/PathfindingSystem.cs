@@ -3,13 +3,11 @@ using ArchECSStride.Code.Arch;
 using ArchECSStride.Code.Arch.Components;
 using ArchECSStride.Code.Services;
 using Stride.Core;
-using Stride.Core.Annotations;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Engine.Design;
 using Stride.Games;
 using Stride.Navigation;
-using Stride.Navigation.Processors;
 using System;
 using System.Linq;
 
@@ -39,7 +37,7 @@ public class PathfindingSystem : SystemBase
 		var navSettings = _gameSettings.Configurations.Get<NavigationSettings>();
 		
 		_queryDescription = new QueryDescription().
-			WithAny<Pathfinder, Position>();
+			WithAny<Pathfinder, Position, Rotation>();
 
 		SetupNavigationComponent();
 	}
@@ -48,7 +46,7 @@ public class PathfindingSystem : SystemBase
 	{
 		var deltaTime = (float)state.Elapsed.TotalSeconds;
 
-		World.Query(in _queryDescription, (ref Pathfinder pathfinder, ref Position position) =>
+		World.Query(in _queryDescription, (ref Pathfinder pathfinder, ref Position position, ref Rotation rotation) =>
 		{
 			if(pathfinder.SetNewPath)
 			{
@@ -57,6 +55,7 @@ public class PathfindingSystem : SystemBase
 			if(pathfinder.ShouldMove)
 			{
 				Move(ref pathfinder, ref position, ref deltaTime);
+				Rotate(ref pathfinder, ref position, ref rotation);
 			}
 		});
 	}
@@ -102,5 +101,18 @@ public class PathfindingSystem : SystemBase
 				pathfinder.Path.RemoveAt(0);
 			}
 		}
+	}
+
+	public void Rotate(ref Pathfinder pathfinder, ref Position position, ref Rotation rotation)
+	{
+		if (pathfinder.Path.Count == 0)
+		{
+			return;
+		}
+
+		float angle = (float)Math.Atan2(pathfinder.Target.Z - position.CurrentPosition.Z,
+			pathfinder.Target.X - position.CurrentPosition.X);
+
+		rotation.CurrentRotation = Quaternion.RotationY(-angle);
 	}
 }

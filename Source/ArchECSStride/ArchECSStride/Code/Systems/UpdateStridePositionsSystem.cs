@@ -20,14 +20,15 @@ public class UpdateStridePositionsSystem : SystemBase
 		_entityManager = Services.GetService<StrideEntityManager>();
 
 		_queryDescription = new QueryDescription().
-			WithAny<StrideId, Position>();
+			WithAny<StrideId, Position, Rotation>();
 	}
 
 	public override void Update(in GameTime state)
 	{
-		World.Query(in _queryDescription, (ref StrideId strideId, ref Position position) =>
+		World.Query(in _queryDescription, (ref StrideId strideId, ref Position position, ref Rotation rotation) =>
 		{
 			_entityManager.Entities[strideId.Id].Transform.Position = position.CurrentPosition;
+			_entityManager.Entities[strideId.Id].Transform.Rotation = rotation.CurrentRotation;
 		});
 	}
 }
