@@ -12,7 +12,10 @@ namespace ArchECSStride.Code.Arch.Components;
 [ComponentCategory("Arch Components")]
 public class ArchPathfinder : ArchComponent
 {
+
+	[DataMemberIgnore]
 	public override object ComponentValue { get; set; } = new Pathfinder();
+
 	public override void SetData()
 	{
 		ComponentValue = new Pathfinder();
@@ -26,7 +29,7 @@ public struct Pathfinder
 	// I think this ruins the benefit of a struct but I dont have an alternative atm.
 	public List<Vector3> Path = new();
 	public bool ShouldMove;
-	public float Speed = 1;
+	public float Speed = 5;
 
 	public Pathfinder()
 	{

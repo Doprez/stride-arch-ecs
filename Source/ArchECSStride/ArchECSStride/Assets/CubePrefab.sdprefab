@@ -21,12 +21,6 @@ Hierarchy:
                         Master: null
                     8f2e7287f51f04d84e3714baf62f3efa: !ArchPathfinder
                         Id: bc85cedf-5099-4b2c-a0db-c6462868a199
-                        ComponentValue: !ArchECSStride.Code.Arch.Components.Pathfinder,ArchECSStride
-                            Target: {X: 0.0, Y: 0.0, Z: 0.0}
-                            SetNewPath: false
-                            Path: null
-                            ShouldMove: false
-                            Speed: 0.0
                     9effa4d5b7b729bb329ee0f0a4aabf72: !ArchPosition
                         Id: 0edda916-c4ed-410b-895c-a692e2d203d1
                         UseStridePosition: true

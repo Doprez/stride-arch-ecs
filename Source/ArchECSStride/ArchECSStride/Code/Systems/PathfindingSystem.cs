@@ -52,11 +52,11 @@ public class PathfindingSystem : SystemBase
 		{
 			if(pathfinder.SetNewPath)
 			{
-				SetNewPath(ref pathfinder, ref position);
+				SetNewPath(ref pathfinder, ref position, ref _navigationComponent);
 			}
 			if(pathfinder.ShouldMove)
 			{
-				Move(ref pathfinder, ref position, deltaTime);
+				Move(ref pathfinder, ref position, ref deltaTime);
 			}
 		});
 	}
@@ -69,12 +69,12 @@ public class PathfindingSystem : SystemBase
 		_navigationComponent = navComponent;
 	}
 
-	private void SetNewPath(ref Pathfinder pathfinder, ref Position position)
+	private void SetNewPath(ref Pathfinder pathfinder, ref Position position, ref NavigationComponent navigationComponent)
 	{
-		_navigationComponent.TryFindPath(position.CurrentPosition, pathfinder.Target, pathfinder.Path);
+		navigationComponent.TryFindPath(position.CurrentPosition, pathfinder.Target, pathfinder.Path);
 	}
 
-	private void Move(ref Pathfinder pathfinder, ref Position position, float deltaTime)
+	private void Move(ref Pathfinder pathfinder, ref Position position, ref float deltaTime)
 	{
 		if (pathfinder.Path.Count == 0)
 		{

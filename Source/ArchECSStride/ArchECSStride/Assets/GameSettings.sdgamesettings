@@ -47,11 +47,10 @@ Defaults:
             - !EntityRegisterSystem {}
             - !SpawnPrefabSystem
                 PrefabToSpawn: 959d605f-86f3-4b2a-9b23-2f73827ed793:CubePrefab
-                AmountOfPrefabs: 100
+                AmountOfPrefabs: 10000
             - !UpdateStridePositionsSystem {}
             - !PathfindingSystem {}
             - !MoveEntitySystem {}
-            - !TestSystem {}
 Overrides: []
 PlatformFilters:
     - PowerVR SGX 54[0-9]

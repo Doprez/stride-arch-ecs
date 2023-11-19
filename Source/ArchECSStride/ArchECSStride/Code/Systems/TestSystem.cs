@@ -30,6 +30,6 @@ public class TestSystem : SystemBase
 	{
 		var result = World.CountEntities(in _queryDescription);
 
-		_debugText.Print($"TestSystem entities: {result} \nFPS: {_game.UpdateTime.FramePerSecond} \nUpdate Time: {state.TimePerFrame.TotalMilliseconds}", new Int2(50, 50));
+		_debugText.Print($"Entities: {result} \nFPS: {_game.UpdateTime.FramePerSecond} \nUpdate Time: {state.TimePerFrame.TotalMilliseconds}", new Int2(50, 50));
 	}
 }
