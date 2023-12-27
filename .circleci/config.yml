@@ -14,13 +14,13 @@ jobs:
         - checkout
         - run:
             name: Restore
-            command: dotnet restore .\\stride-arch-ecs\\Source\\ArchECSStride\\Doprez.Stride.Arch\\Doprez.Stride.Arch.sln
+            command: dotnet restore .\\Source\\ArchECSStride\\Doprez.Stride.Arch\\Doprez.Stride.Arch.csproj
         - run: 
             name: Build
-            command: dotnet build .\\stride-arch-ecs\\Source\\ArchECSStride\\Doprez.Stride.Arch\\Doprez.Stride.Arch.sln
+            command: dotnet build .\\Source\\ArchECSStride\\Doprez.Stride.Arch\\Doprez.Stride.Arch.csproj
         - run: 
             name: Package
-            command: dotnet pack .\\stride-arch-ecs\\Source\\ArchECSStride\\Doprez.Stride.Arch\\Doprez.Stride.Arch.sln -o ./App
+            command: dotnet pack .\\Source\\ArchECSStride\\Doprez.Stride.Arch\\Doprez.Stride.Arch.csproj -o ./App
         - run:
             name: Publish
             command: cd App && ls && dotnet nuget push Doprez.Stride.*.nupkg --api-key $NUGET_KEY --source https://api.nuget.org/v3/index.json
