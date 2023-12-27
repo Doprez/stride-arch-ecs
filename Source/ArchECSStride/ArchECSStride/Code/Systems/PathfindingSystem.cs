@@ -1,5 +1,4 @@
 ﻿using Arch.Core;
-using ArchECSStride.Code.Arch;
 using ArchECSStride.Code.Arch.Components;
 using Doprez.Stride.Arch;
 using Doprez.Stride.Arch.Services;

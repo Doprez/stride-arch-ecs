@@ -27,7 +27,7 @@ public class ArchProcessor : EntityProcessor<ArchComponent>
 
     public ArchProcessor()
     {
-        Order = 10000;
+        Order = 50000;
     }
 
     protected override void OnSystemAdd()

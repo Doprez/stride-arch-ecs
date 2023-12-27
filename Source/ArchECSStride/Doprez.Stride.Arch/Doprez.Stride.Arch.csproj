@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Arch" Version="1.2.7.1-alpha" />
+    <PackageReference Include="Stride.Core" Version="4.2.0.2043" />
     <PackageReference Include="Stride.Engine" Version="4.2.0.2043" />
   </ItemGroup>
 
