@@ -3,19 +3,15 @@ using StrideEntity = Stride.Engine.Entity;
 using ArchEntity = Arch.Core.Entity;
 using Arch.Core.Extensions;
 using Stride.Engine;
-using System.Collections.Generic;
-using Stride.Core;
-using System;
-using Arch.Core;
-using Doprez.Stride.Arch;
 using Doprez.Stride.Arch.Components;
 using Doprez.Stride.Arch.Services;
+using Arch.Core;
 
 namespace Doprez.Stride.Arch.Systems;
 /// <summary>
 /// A system that registers Stride entities with Arch ECS when they are created at runtime.
 /// </summary>
-public class EntityRegisterSystem : SystemBase
+public class DefaultEntityRegisterSystem : SystemBase
 {
     private StrideEntityManager _strideEntityManager;
     private QueryDescription _query;
@@ -38,15 +34,21 @@ public class EntityRegisterSystem : SystemBase
         var id = _strideEntityManager.GetEntityId(e);
 
         ArchEntity entityToDestroy = new();
+        bool found = false;
         World.Query(in _query, (ref ArchEntity entity, ref StrideId strideId) =>
         {
-            if (strideId.Id == id) entityToDestroy = entity;
+            if (strideId.Id == id)
+            {
+                entityToDestroy = entity;
+				found = true;
+			}
         });
 
-        // Unregister from Entity Manager
-        _strideEntityManager.RemoveEntity(id);
-        // Remove from Arch ECS
-        // World.Destroy(entityToDestroy);
+		// Remove from Arch ECS
+        //if(found)
+		//    World.Destroy(entityToDestroy);
+		// Unregister from Entity Manager
+		_strideEntityManager.RemoveEntity(id);
     }
 
     private void SceneInstance_EntityAdded(object sender, StrideEntity e)

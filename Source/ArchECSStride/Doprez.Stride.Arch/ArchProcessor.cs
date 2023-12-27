@@ -46,7 +46,7 @@ public class ArchProcessor : EntityProcessor<ArchComponent>
 
         if (_archSettings.AddDefaultRegisterSystem)
         {
-            var registerSystem = new EntityRegisterSystem();
+            var registerSystem = new DefaultEntityRegisterSystem();
             _archSettings.Systems.Add(registerSystem);
             registerSystem.InitializeSystem(_world, Services, _sceneSystem);
             registerSystem.Start();
