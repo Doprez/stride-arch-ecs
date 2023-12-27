@@ -1,6 +1,8 @@
 # stride-arch-ecs
 An example in Stride using Arch ECS.
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Doprez/stride-arch-ecs/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Doprez/stride-arch-ecs/tree/main)
+
 # Features
 ## Ease of use
 Systems can be added through the GameSettings class in the Stride editor for easy management.
