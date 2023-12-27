@@ -1,4 +1,5 @@
-﻿using Stride.Core;
+﻿using Doprez.Stride.Arch;
+using Stride.Core;
 using Stride.Engine;
 
 namespace ArchECSStride.Code.Arch.Components;

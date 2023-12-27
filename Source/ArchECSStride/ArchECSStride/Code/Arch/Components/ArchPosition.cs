@@ -1,8 +1,7 @@
-﻿using Arch.Core.Utils;
+﻿using Doprez.Stride.Arch;
 using Stride.Core;
 using Stride.Core.Mathematics;
 using Stride.Engine;
-using System;
 
 namespace ArchECSStride.Code.Arch.Components;
 [DataContract(nameof(ArchPosition))]

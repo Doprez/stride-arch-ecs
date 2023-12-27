@@ -19,16 +19,22 @@ Hierarchy:
                     ff4963edcf75b0de448fef82de925dfe: !InstanceComponent
                         Id: d7d9e20e-9c09-475b-bafd-689b58c368f4
                         Master: null
-                    8f2e7287f51f04d84e3714baf62f3efa: !ArchPathfinder
-                        Id: bc85cedf-5099-4b2c-a0db-c6462868a199
-                    9effa4d5b7b729bb329ee0f0a4aabf72: !ArchPosition
-                        Id: 0edda916-c4ed-410b-895c-a692e2d203d1
-                        UseStridePosition: true
-                        StartPosition:
-                            CurrentPosition: {X: 0.0, Y: 0.0, Z: 0.0}
                     0f65c959594a1ae5d162cd32635a0b71: !ArchECSStride.Code.InitializeInstanceMesh,ArchECSStride
                         Id: 136e5713-2df7-4677-98e8-ca25d4e60751
                         InstanceComponent: ref!! d7d9e20e-9c09-475b-bafd-689b58c368f4
                         InstancedModelName: InstancedMesh
-                    c61d65090ae2cbb9315bda3cb7c64520: !ArchRotation
-                        Id: a9c80ea5-ac9b-4d0f-8ba8-fd4acb98c039
+                    ced613a7872156e2a011a0c09bd9a974: !ArchPosition
+                        Id: 45e5ab48-6183-48d5-a92b-10eb399c7515
+                        UseStridePosition: true
+                        StartPosition:
+                            CurrentPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+                    6d913b7d4eb3808de72a6d4b9f2e2c05: !ArchRotation
+                        Id: e1fced99-2ddb-4773-8170-d2b536f61648
+                    618ba3cd639bde89e91dfbf8d1eae3e0: !ArchVelocity
+                        Id: 8e63cfb1-8243-44a0-bf2b-356f93757648
+                        ComponentValue: !ArchECSStride.Code.Arch.Components.Velocity,ArchECSStride
+                            X: 0.0
+                            Y: 0.0
+                            Z: 0.0
+                    d92a3b021d0dc38cd7a19a1cb72d8e2a: !ArchPathfinder
+                        Id: fb8339a1-fa08-436b-b0d1-7a41ca776419
