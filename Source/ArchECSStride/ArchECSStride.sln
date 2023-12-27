@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
@@ -6,6 +6,8 @@ MinimumVisualStudioVersion = 16.0.0.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchECSStride.Windows", "ArchECSStride.Windows\ArchECSStride.Windows.csproj", "{6590A0C0-5F7E-4965-B453-A3C1487036A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchECSStride", "ArchECSStride\ArchECSStride.csproj", "{DC01CC0A-B8B2-4501-A8B2-F0165E978C0D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doprez.Stride.Arch", "Doprez.Stride.Arch\Doprez.Stride.Arch.csproj", "{B174721B-80B9-47CE-B661-3E448742F643}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DC01CC0A-B8B2-4501-A8B2-F0165E978C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC01CC0A-B8B2-4501-A8B2-F0165E978C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC01CC0A-B8B2-4501-A8B2-F0165E978C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B174721B-80B9-47CE-B661-3E448742F643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B174721B-80B9-47CE-B661-3E448742F643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B174721B-80B9-47CE-B661-3E448742F643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B174721B-80B9-47CE-B661-3E448742F643}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -42,13 +42,13 @@ Defaults:
                     MaxClimb: 0.25
                     MaxSlope: {Radians: 0.7853982}
                     Radius: 0.5
-    - !ArchECSStride.Code.Configurations.ArchSettings,ArchECSStride
+    - !Doprez.Stride.Arch.Configurations.ArchSettings,Doprez.Stride.Arch
+        AddDefaultRegisterSystem: true
         Systems:
-            - !EntityRegisterSystem {}
+            - !MoveEntitySystem {}
             - !SpawnPrefabSystem
                 PrefabToSpawn: 959d605f-86f3-4b2a-9b23-2f73827ed793:CubePrefab
-                AmountOfPrefabs: 10000
-            - !MoveEntitySystem {}
+                AmountOfPrefabs: 20000
             - !UpdateStridePositionsSystem {}
             - !PathfindingSystem {}
 Overrides: []

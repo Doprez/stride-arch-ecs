@@ -1,4 +1,5 @@
 ﻿using ArchECSStride.Code.Arch;
+using Doprez.Stride.Arch;
 using Stride.Core;
 
 namespace ArchECSStride.Code.NPC.Components;

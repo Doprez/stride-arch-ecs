@@ -1,5 +1,4 @@
 using ArchECSStride.Code;
-using Stride.Engine;
 
 namespace ArchECSStride
 {

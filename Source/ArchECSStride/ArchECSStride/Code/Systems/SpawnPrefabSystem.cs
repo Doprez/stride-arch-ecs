@@ -1,4 +1,5 @@
 ﻿using ArchECSStride.Code.Arch;
+using Doprez.Stride.Arch;
 using Stride.Core;
 using Stride.Core.Serialization;
 using Stride.Core.Serialization.Contents;

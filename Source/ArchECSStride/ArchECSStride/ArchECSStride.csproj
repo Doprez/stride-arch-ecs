@@ -1,10 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Arch" Version="1.2.7" />
-    <PackageReference Include="Arch.System" Version="1.0.2" />
     <PackageReference Include="Stride.Engine" Version="4.2.0.2043" />
     <PackageReference Include="Stride.Video" Version="4.2.0.2043" />
     <PackageReference Include="Stride.Physics" Version="4.2.0.2043" />
@@ -15,5 +13,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Code\NPC\Systems\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Doprez.Stride.Arch\Doprez.Stride.Arch.csproj" />
   </ItemGroup>
 </Project>

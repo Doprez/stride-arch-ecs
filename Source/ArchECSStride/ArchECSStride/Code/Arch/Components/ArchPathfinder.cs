@@ -1,4 +1,5 @@
-﻿using Stride.Core;
+﻿using Doprez.Stride.Arch;
+using Stride.Core;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using System;
@@ -33,5 +34,8 @@ public struct Pathfinder
 
 	public Pathfinder()
 	{
+		SetNewPath = false;
+		Target = Vector3.Zero;
+		ShouldMove = false;
 	}
 }
