@@ -4,7 +4,26 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>..\..\..\LICENSE</Copyright>
+	<Version>1.0.0.1</Version>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+	  <Title>Doprez.Stride.Arch</Title>
+	  <Description>A package of helper classes for using Arch ECS in Stride3D</Description>
+	  <PackageTags>Stride3d;Game Engine;Stride;Arch;ECS;Arch ECS;</PackageTags>
+	  <RepositoryUrl>https://github.com/Doprez/stride-arch-ecs</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Arch" Version="1.2.7.1-alpha" />

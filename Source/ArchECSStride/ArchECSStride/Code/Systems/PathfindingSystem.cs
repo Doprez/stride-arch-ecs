@@ -68,12 +68,12 @@ public class PathfindingSystem : SystemBase
 		_navigationComponent = navComponent;
 	}
 
-	private void SetNewPath(ref Pathfinder pathfinder, ref Position position, ref NavigationComponent navigationComponent)
+	private static void SetNewPath(ref Pathfinder pathfinder, ref Position position, ref NavigationComponent navigationComponent)
 	{
 		navigationComponent.TryFindPath(position.CurrentPosition, pathfinder.Target, pathfinder.Path);
 	}
 
-	private void Move(ref Pathfinder pathfinder, ref Position position, ref float deltaTime)
+	private static void Move(ref Pathfinder pathfinder, ref Position position, ref float deltaTime)
 	{
 		if (pathfinder.Path.Count == 0)
 		{
@@ -103,7 +103,7 @@ public class PathfindingSystem : SystemBase
 		}
 	}
 
-	public void Rotate(ref Pathfinder pathfinder, ref Position position, ref Rotation rotation)
+	public static void Rotate(ref Pathfinder pathfinder, ref Position position, ref Rotation rotation)
 	{
 		if (pathfinder.Path.Count == 0)
 		{
