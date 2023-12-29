@@ -8,7 +8,7 @@ namespace Doprez.Stride.Arch;
 /// This is the base class for all Systems in the Arch ECS. Can be added throught the GameSettings asset.
 /// </summary>
 [DataContract]
-public abstract class SystemBase
+public abstract class ArchSystem
 {
 
     /// <summary>
@@ -42,7 +42,7 @@ public abstract class SystemBase
     public virtual void Start() { }
 
     /// <summary>
-    ///     Should be called within the update loop to update this system and executes its logic.
+    /// Should be called within the update loop to update this system and execute its logic.
     /// </summary>
     /// <param name="state">A external state being passed to this method to be used.</param>
     public virtual void Update(in GameTime state) { }

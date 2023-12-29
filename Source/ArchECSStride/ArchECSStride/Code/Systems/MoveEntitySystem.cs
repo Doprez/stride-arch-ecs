@@ -11,7 +11,7 @@ namespace ArchECSStride.Code.Systems;
 /// Randomly moves entities in both the Arch world and the Stride scene.
 /// </summary>
 [DataContract(nameof(MoveEntitySystem))]
-public class MoveEntitySystem : SystemBase
+public class MoveEntitySystem : ArchSystem
 {
 	private QueryDescription _queryDescription;
 	private Random _random = new();

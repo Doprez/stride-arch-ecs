@@ -7,6 +7,23 @@ Hierarchy:
         - ref!! 8f866237-62cc-442a-a8f0-db61b40bbeb0
     Parts:
         -   Entity:
+                Id: 66a8b642-665d-4275-95e9-2e75eb62c62e
+                Name: Model
+                Components:
+                    44f3171db58af19268a82685c86c32f5: !TransformComponent
+                        Id: c92f2328-8232-4782-abfb-791710993cb2
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 0.5, Y: 1.5, Z: 0.5}
+                        Children: {}
+                    5d0230f756858c8d1494106acb82b18c: !ArchECSStride.Code.InitializeInstanceMesh,ArchECSStride
+                        Id: df682724-3e9d-40c9-9988-143330653b47
+                        InstanceComponent: ref!! 9d29f026-ecdb-4988-832d-7fd7592ddfb9
+                        InstancedModelName: InstancedMesh
+                    db01affb43ced9c5e2f26681e3709082: !InstanceComponent
+                        Id: 9d29f026-ecdb-4988-832d-7fd7592ddfb9
+                        Master: null
+        -   Entity:
                 Id: 8f866237-62cc-442a-a8f0-db61b40bbeb0
                 Name: Cube
                 Components:
@@ -15,14 +32,8 @@ Hierarchy:
                         Position: {X: 0.0, Y: 0.5, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    ff4963edcf75b0de448fef82de925dfe: !InstanceComponent
-                        Id: d7d9e20e-9c09-475b-bafd-689b58c368f4
-                        Master: null
-                    0f65c959594a1ae5d162cd32635a0b71: !ArchECSStride.Code.InitializeInstanceMesh,ArchECSStride
-                        Id: 136e5713-2df7-4677-98e8-ca25d4e60751
-                        InstanceComponent: ref!! d7d9e20e-9c09-475b-bafd-689b58c368f4
-                        InstancedModelName: InstancedMesh
+                        Children:
+                            dcd7b6b383456adb16b4842bb731fef9: ref!! c92f2328-8232-4782-abfb-791710993cb2
                     ced613a7872156e2a011a0c09bd9a974: !ArchPosition
                         Id: 45e5ab48-6183-48d5-a92b-10eb399c7515
                         UseStridePosition: true

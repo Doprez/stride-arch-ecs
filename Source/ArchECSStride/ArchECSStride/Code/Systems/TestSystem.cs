@@ -11,7 +11,7 @@ namespace ArchECSStride.Code.Systems;
 /// So far this test class turned into basic logging of entity count and FPS.
 /// </summary>
 [DataContract(nameof(TestSystem))]
-public class TestSystem : SystemBase
+public class TestSystem : ArchSystem
 {
 	private DebugTextSystem _debugText;
 	private QueryDescription _queryDescription;

@@ -10,7 +10,7 @@ namespace ArchECSStride.Code.Systems;
 /// A simple system to spawn prefabs on startup.
 /// </summary>
 [DataContract(nameof(SpawnPrefabSystem))]
-public class SpawnPrefabSystem : SystemBase
+public class SpawnPrefabSystem : ArchSystem
 {
 	public UrlReference PrefabToSpawn { get; set; }
 	public int AmountOfPrefabs { get; set; } = 100;

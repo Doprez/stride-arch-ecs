@@ -12,5 +12,12 @@ namespace Doprez.Stride.Arch.Configurations;
 public class ArchSettings : Configuration
 {
     public bool AddDefaultRegisterSystem { get; set; } = true;
-    public List<SystemBase> Systems { get; set; } = new();
+    /// <summary>
+    /// These systems will run sequentially.
+    /// </summary>
+    public List<ArchSystem> Systems { get; set; } = new();
+    /// <summary>
+    /// These systems with run in parallel with eachother AFTER Systems.
+    /// </summary>
+    public List<ArchSystem> ParallelSystems { get; set; } = new();
 }

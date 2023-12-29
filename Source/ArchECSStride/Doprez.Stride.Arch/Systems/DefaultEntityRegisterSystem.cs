@@ -11,7 +11,7 @@ namespace Doprez.Stride.Arch.Systems;
 /// <summary>
 /// A system that registers Stride entities with Arch ECS when they are created at runtime.
 /// </summary>
-public class DefaultEntityRegisterSystem : SystemBase
+public class DefaultEntityRegisterSystem : ArchSystem
 {
     private StrideEntityManager _strideEntityManager;
     private QueryDescription _query;

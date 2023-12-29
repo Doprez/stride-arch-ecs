@@ -17,7 +17,7 @@ namespace ArchECSStride.Code.Systems;
 /// Requires a NavigationComponent Entity within the Stride scene.
 /// </summary>
 [DataContract(nameof(PathfindingSystem))]
-public class PathfindingSystem : SystemBase
+public class PathfindingSystem : ArchSystem
 {
 
 	private StrideEntityManager _entityManager;

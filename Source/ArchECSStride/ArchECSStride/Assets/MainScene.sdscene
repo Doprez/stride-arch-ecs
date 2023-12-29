@@ -21,6 +21,7 @@ Hierarchy:
         - ref!! 3d7a8876-1cc9-480e-946a-ac97788e282d
         - ref!! 13033b01-40ec-4c52-af25-cc383e1da08d
         - ref!! c3ad6845-21c1-4e06-ab5d-0b246cc10754
+        - ref!! 3ccd5ba5-f466-4823-bace-002bf38a428a
     Parts:
         -   Folder: NavBoxes
             Entity:
@@ -64,6 +65,20 @@ Hierarchy:
                     a857e23b603ca533a778088f383e7be7: !Stride.Navigation.NavigationBoundingBoxComponent,Stride.Navigation
                         Id: de5d1a7b-06b9-44cd-a12c-c1fe0639d237
                         Size: {X: 100.0, Y: 10.0, Z: 100.0}
+        -   Entity:
+                Id: 3ccd5ba5-f466-4823-bace-002bf38a428a
+                Name: Tree
+                Components:
+                    191aaaaf9f18277a4f902b8e7e875ff8: !TransformComponent
+                        Id: 2c3e34c2-973c-431a-953d-71b5984dd90c
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6b2586ea4e852c6ec328b7f66f2b91d0: !ModelComponent
+                        Id: 9585073d-bb6e-4b10-861e-c884b8a0444c
+                        Model: f95727a0-119f-483a-a9c0-4982e475c438:Models/Tree
+                        Materials: {}
         -   Folder: NavBoxes
             Entity:
                 Id: 3d7a8876-1cc9-480e-946a-ac97788e282d
@@ -91,7 +106,8 @@ Hierarchy:
                     cf52defb7087fa879cc2b484c8017287: !ModelComponent
                         Id: 601b8225-6d8d-4766-b155-f9aa9cb32f9b
                         Model: 56894502-5bbc-4870-8f4a-9bfad3c09d7b:Ground
-                        Materials: {}
+                        Materials:
+                            6c870e5277fabe33fca7ccbd267218c5~0: 9ca3427a-0cf2-4e19-a441-62cc07113a23:Materials/Grass
                     63e503e5b1bb62d3911b6a993caf990c: !StaticColliderComponent
                         Id: 5f560676-10e4-4d4a-b08d-b8e36036b97d
                         CollisionGroup: StaticFilter

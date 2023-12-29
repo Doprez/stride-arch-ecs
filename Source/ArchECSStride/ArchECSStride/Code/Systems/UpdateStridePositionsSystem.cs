@@ -7,6 +7,7 @@ using Doprez.Stride.Arch.Services;
 using Stride.Core;
 using Stride.Core.Threading;
 using Stride.Games;
+using System;
 using System.Runtime.CompilerServices;
 
 namespace ArchECSStride.Code.Systems;
@@ -14,7 +15,7 @@ namespace ArchECSStride.Code.Systems;
 /// Syncs Arch world positions to Strides Positions.
 /// </summary>
 [DataContract(nameof(UpdateStridePositionsSystem))]
-public class UpdateStridePositionsSystem : SystemBase
+public class UpdateStridePositionsSystem : ArchSystem
 {
 	private StrideEntityManager _entityManager;
 	private QueryDescription _queryDescription;
@@ -34,5 +35,25 @@ public class UpdateStridePositionsSystem : SystemBase
 			_entityManager.Entities[strideId.Id].Transform.Position = position.CurrentPosition;
 			_entityManager.Entities[strideId.Id].Transform.Rotation = rotation.CurrentRotation;
 		});
+
+		//var testQuery = World.Query(in _queryDescription);
+		// this works but is slower due to needing to use chunk.GetFirst AND
+		// the chunk size being limited to 166 Entities per chunk.
+		//foreach(var chunk in testQuery.GetChunkIterator())
+		//{
+		//	Dispatcher.For(0, chunk.Entities.Length, j =>
+		//	{
+		//		var reference = chunk.GetFirst<StrideId, Position, Rotation>();
+		//	
+		//		ref var strideId = ref Unsafe.Add(ref reference.t0, j);
+		//		ref var position = ref Unsafe.Add(ref reference.t1, j);
+		//		ref var rotation = ref Unsafe.Add(ref reference.t2, j);
+		//	
+		//		// strideId is not initialized on startup
+		//		if (strideId.Id == Guid.Empty) return;
+		//		_entityManager.Entities[strideId.Id].Transform.Position = position.CurrentPosition;
+		//		_entityManager.Entities[strideId.Id].Transform.Rotation = rotation.CurrentRotation;
+		//	});
+		//}
 	}
 }

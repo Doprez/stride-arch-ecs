@@ -74,17 +74,16 @@ public class ArchProcessor : EntityProcessor<ArchComponent>
 
     public override void Update(GameTime time)
     {
-        // This works but will need to make configurable in case of issues between systems.
-        //Dispatcher.For(0, _archSettings.Systems.Count, i =>
-        //{
-        //	_archSettings.Systems[i].Update(in time);
-        //});
-
         for (int i = 0; i < _archSettings.Systems.Count; i++)
         {
             _archSettings.Systems[i].Update(in time);
-        }
-    }
+		}
+
+		Dispatcher.For(0, _archSettings.ParallelSystems.Count, i =>
+		{
+			_archSettings.ParallelSystems[i].Update(in time);
+		});
+	}
 
     private void RegisterEntity(StrideEntity entity)
     {

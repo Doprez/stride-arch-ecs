@@ -12,9 +12,6 @@
     <PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.2.0.2043" IncludeAssets="build;buildTransitive" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Code\NPC\Systems\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Doprez.Stride.Arch\Doprez.Stride.Arch.csproj" />
   </ItemGroup>
 </Project>

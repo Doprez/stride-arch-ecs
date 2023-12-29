@@ -6,10 +6,11 @@ namespace ArchECSStride.Code.NPC.Components;
 public class ArchNPCAgent : ArchComponent
 {
 	[DataMemberIgnore]
-	public override object ComponentValue { get; set; }
+	public override object ComponentValue { get; set; } = new NPCAgent();
 }
 
 public struct NPCAgent
 {
-	public ushort CurrentStateId;
+	public ushort CurrentJobId;
+	public ushort CurrentStateIndex;
 }

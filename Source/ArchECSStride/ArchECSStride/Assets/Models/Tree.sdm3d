@@ -1,0 +1,24 @@
+!Model
+Id: f95727a0-119f-483a-a9c0-4982e475c438
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Models/Tree.obj
+Skeleton: null
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+Materials:
+    a6cc4976c3466ac00c7f2f2f7be24baf:
+        Name: DefaultMaterial
+        MaterialInstance:
+            Material: null
+    1ceb1b6db96b78da69a451eb44e542c9:
+        Name: Trunk
+        MaterialInstance:
+            Material: e6245846-537b-4b1a-957b-6a1d8715e7d4:Materials/Trunk
+    9918fd474a85dc614cc37b3edfcc608b:
+        Name: Leaves
+        MaterialInstance:
+            Material: b0afea36-8e25-4096-b26a-ccf956f78fe5:Materials/Leaves
+DeduplicateMaterials: false
+Modifiers: {}
+~SourceHashes:
+    380c674c292ff0174c8129404e939300~../../Resources/Models/Tree.obj: b62071259fe3a31785c0b1284069d115
