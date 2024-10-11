@@ -1,5 +1,5 @@
 # stride-arch-ecs
-An example in Stride using Arch ECS.
+An example in [Stride](https://github.com/stride3d/stride) using [Arch ECS](https://github.com/genaray/Arch).
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Doprez/stride-arch-ecs/tree/release.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Doprez/stride-arch-ecs/tree/release)
 
